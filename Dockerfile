@@ -9,5 +9,8 @@ LABEL "repository"="https://github.com/whobutsb/laravel-pint-action"
 LABEL "homepage"="https://github.com/whobutsb/laravel-pint-action"
 LABEL "maintainer"="Steve Barbera <me@stevebarbera.com>"
 
-ADD entry.sh /entry.sh
+COPY entry.sh /entry.sh
+
+RUN chmod +x /entry.sh
+
 ENTRYPOINT ["/entry.sh"]
