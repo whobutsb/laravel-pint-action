@@ -9,5 +9,5 @@ LABEL "repository"="https://github.com/whobutsb/laravel-pint-action"
 LABEL "homepage"="https://github.com/whobutsb/laravel-pint-action"
 LABEL "maintainer"="Steve Barbera <me@stevebarbera.com>"
 
-ADD entrypoint.sh /entrypoint.sh
-ENTRYPOINT ["/entrypoint.sh"]
+ADD entry.sh /entry.sh
+ENTRYPOINT ["/entry.sh"]
