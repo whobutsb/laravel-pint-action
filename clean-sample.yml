@@ -1,14 +1,22 @@
-name: 'Laravel Pint Github Action'
+on: [push]
 
-description: 'Use Laravel Pint to clean your code'
+jobs: 
+  clean:
+    runs-on: ubuntu-latest
+    name: Clean the code with Laravel Pint
+    steps:
 
-inputs: 
-  preset:
-    description: 'The Pint preset you would like to use'
-    required: false
-    default: psr12
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  args:
-    - ${{ inputs.preset }}
+      - name: Checkout
+        uses: actions/checkout@v3
+        with: 
+          ref: ${{ github.head_ref }}
+
+      - name: Clean code
+        uses: whobutsb/laravel-pint-action@main
+        with:
+          preset: laravel
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Fix styling
