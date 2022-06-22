@@ -2,6 +2,6 @@
 
 composer install --prefer-dist
 
-composer require laravel/pint
+composer require --dev laravel/pint
 
 php vendor/bin/pint --preset ${INPUT_PRESET}
