@@ -1,6 +1,7 @@
 name: 'Laravel Pint Github Action'
-
 description: 'Use Laravel Pint to clean your code'
+author: 'Steve Barbera'
+
 
 inputs: 
   preset:
